@@ -1,3 +1,9 @@
+const generatorDiv = document.querySelector(".generator");
+
+const randomNumber = () => {
+  Math.floor(Math.random() * 10);
+};
+
 let promptOne = randomNumber();
 let promptTwo = randomNumber();
 let promptThree = randomNumber();
