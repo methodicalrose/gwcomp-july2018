@@ -1,5 +1,6 @@
 const generateButton = document.querySelector("#generate-button");
 const generatorDiv = document.querySelector(".generator");
+const outputP = document.getElementById("prompt-output");
 
 generateButton.addEventListener("click", (e) => {
   let randomNumber = () => {
@@ -117,8 +118,6 @@ generateButton.addEventListener("click", (e) => {
   }
 
   let writingPrompt = `The ${promptOne}, the ${promptTwo}, and the ${promptThree}.`;
-  let promptGenerator = document.createElement("p");
-  promptGenerator.textContent = writingPrompt;
-  promptGenerator.className = "prompt";
-  generatorDiv.appendChild(promptGenerator);
+  outputP.innerHTML = writingPrompt;
+  outputP.className = "prompt";
 });
