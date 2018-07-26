@@ -5,7 +5,7 @@ const generateButton = document.querySelector("#generate-button");
 //Paragraph tag containing generated writing prompt
 const outputP = document.querySelector("#prompt-output");
 
-/* When the user clicks the Genrate Prompt button, random number function is activated
+/* When the user clicks the Generate Prompt button, random number function is activated
 This will generate a random number between 0 and 9 */
 generateButton.addEventListener("click", (e) => {
   let randomNumber = () => {
