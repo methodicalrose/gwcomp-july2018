@@ -3,7 +3,7 @@ const generatorDiv = document.querySelector(".generator");
 
 generateButton.addEventListener("click", (e) => {
   let randomNumber = () => {
-    Math.floor(Math.random() * 10);
+    return Math.floor(Math.random() * 10);
   };
 
   let promptOne = randomNumber();
@@ -117,9 +117,8 @@ generateButton.addEventListener("click", (e) => {
   }
 
   let writingPrompt = `The ${promptOne}, the ${promptTwo}, and the ${promptThree}.`;
-//Prompts are not receiving data
   let promptGenerator = document.createElement("p");
   promptGenerator.textContent = writingPrompt;
-  promptGenerator.className = "prompt"; //CSS is not applying
+  promptGenerator.className = "prompt";
   generatorDiv.appendChild(promptGenerator);
 });
