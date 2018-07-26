@@ -1,16 +1,22 @@
-const generateButton = document.querySelector("#generate-button");
+//Div containing all writing prompt elements
 const generatorDiv = document.querySelector(".generator");
-const outputP = document.getElementById("prompt-output");
+//Generate Prompt Button
+const generateButton = document.querySelector("#generate-button");
+//Paragraph tag containing generated writing prompt
+const outputP = document.querySelector("#prompt-output");
 
+/* When user clicks Genrate Prompt button, random number function is activated
+This will generate a random number between 0 and 9 */
 generateButton.addEventListener("click", (e) => {
   let randomNumber = () => {
     return Math.floor(Math.random() * 10);
   };
-
+// The random number function is called for each piece of the generated text output
   let promptOne = randomNumber();
   let promptTwo = randomNumber();
   let promptThree = randomNumber();
-
+/* Based on which number was generated, each piece of the prompt will have its value replaced
+with the associated string. This is repeated for each piece of the prompt */
   switch(promptOne) {
     case 0:
       promptOne = "apple";
@@ -116,8 +122,11 @@ generateButton.addEventListener("click", (e) => {
       alert("Error");
       break;
   }
-
+/* The new values of all of the pieces are placed inside of an interpolated string
+which will be added to the page in the next step */
   let writingPrompt = `The ${promptOne}, the ${promptTwo}, and the ${promptThree}.`;
-  outputP.innerHTML = writingPrompt;
+/* The text content of the writing prompt gets replaced with new values each time the
+button is clicked. Styling is also added to the prompt. */
+  outputP.textContent = writingPrompt;
   outputP.className = "prompt";
-});
+}); // End of event
