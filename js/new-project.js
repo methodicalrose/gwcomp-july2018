@@ -51,7 +51,7 @@ with the associated string. This is repeated for each piece of the prompt */
     default:
       alert("Error");
       break;
-  }
+  } // End of first Switch
   switch(promptTwo) {
     case 0:
       promptTwo = "cat";
@@ -86,7 +86,7 @@ with the associated string. This is repeated for each piece of the prompt */
     default:
       alert("Error");
       break;
-  }
+  } // End of second Switch
   switch(promptThree) {
     case 0:
       promptThree = "hurricane";
@@ -121,7 +121,8 @@ with the associated string. This is repeated for each piece of the prompt */
     default:
       alert("Error");
       break;
-  }
+  } // End of third Switch
+  
 /* The new values of all of the pieces are placed inside of an interpolated string
 which will be added to the page in the next step */
   let writingPrompt = `The ${promptOne}, the ${promptTwo}, and the ${promptThree}.`;
