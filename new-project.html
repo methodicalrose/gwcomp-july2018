@@ -28,7 +28,6 @@
         </button>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="index.html">Home</a></li>
@@ -45,6 +44,24 @@
     <p id="prompt-output"></p>
   </div>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <form onsubmit="return displayText();" method="post" action="archives.html" id="storyTime" name="textEditor">
+          <h4>Title:</h4>
+          <input id="title" type="text" name="title" class="text-title" placeholder="Choose a Title" required>
+          <br>
+          <h4>Body:</h4>
+          <textarea id="textBody" name="textBody" form="storyTime" class="text-body text-justify" placeholder="Start writing here!" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div> <!-- /.col -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+
+  <footer>
+    <span class="glyphicon glyphicon-copyright-mark"></span><span>2018 Andy Callahan</span>
+  </footer>
 
   <script src="js/new-project.js"></script>
   <script src="js/scripts.js"></script>

@@ -4,6 +4,8 @@ const generatorDiv = document.querySelector(".generator");
 const generateButton = document.querySelector("#generate-button");
 //Paragraph tag containing generated writing prompt
 const outputP = document.querySelector("#prompt-output");
+//Form containing the text editor
+const writingForm = document.forms.textEditor;
 
 /* When the user clicks the Generate Prompt button, random number function is activated
 This will generate a random number between 0 and 9 */
@@ -122,12 +124,21 @@ with the associated string. This is repeated for each piece of the prompt */
       alert("Error");
       break;
   } // End of third Switch
-  
+
 /* The new values of all of the pieces are placed inside of an interpolated string
 which will be added to the page in the next step */
   let writingPrompt = `The ${promptOne}, the ${promptTwo}, and the ${promptThree}.`;
 /* The text content of the writing prompt gets replaced with new values each time the
 button is clicked. Styling is also added to the prompt. */
   outputP.textContent = writingPrompt;
-  outputP.className = "prompt";
+  outputP.className = "important";
 }); // End of event
+
+//Displays the text input on the page
+function displayText() {
+  let title = document.getElementById("title").value;
+  let textBody = document.getElementById("textBody").value;
+
+  document.write(`<h3>${title}</h3> <br>`);
+  document.write(`${textBody} <br>`);
+}
