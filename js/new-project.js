@@ -8,133 +8,30 @@ const outputP = document.querySelector("#prompt-output");
 const writingForm = document.forms.textEditor;
 
 /* When the user clicks the Generate Prompt button, random number function is activated
-This will generate a random number between 0 and 9 */
+This will generate a random number based on the length of the array it is used for. */
 generateButton.addEventListener("click", (e) => {
-  let randomNumber = () => {
-    return Math.floor(Math.random() * 10);
+  let randomNumber = (len) => {
+    return Math.floor(Math.random() * len);
   };
-// The random number function is called for each piece of the generated text output
-  let promptOne = randomNumber();
-  let promptTwo = randomNumber();
-  let promptThree = randomNumber();
-/* Based on which number was generated, each piece of the prompt will have its value replaced
-with the associated string. This is repeated for each piece of the prompt */
-  switch(promptOne) {
-    case 0:
-      promptOne = "apple";
-      break;
-    case 1:
-      promptOne = "ring";
-      break;
-    case 2:
-      promptOne = "bear";
-      break;
-    case 3:
-      promptOne = "giant";
-      break;
-    case 4:
-      promptOne = "wish";
-      break;
-    case 5:
-      promptOne = "seed";
-      break;
-    case 6:
-      promptOne = "miracle";
-      break;
-    case 7:
-      promptOne = "teacup";
-      break;
-    case 8:
-      promptOne = "mirror";
-      break;
-    case 9:
-      promptOne = "old house";
-      break;
-    default:
-      alert("Error");
-      break;
-  } // End of first Switch
-  switch(promptTwo) {
-    case 0:
-      promptTwo = "cat";
-      break;
-    case 1:
-      promptTwo = "glove";
-      break;
-    case 2:
-      promptTwo = "child";
-      break;
-    case 3:
-      promptTwo = "forest";
-      break;
-    case 4:
-      promptTwo = "violin";
-      break;
-    case 5:
-      promptTwo = "siren";
-      break;
-    case 6:
-      promptTwo = "laugh";
-      break;
-    case 7:
-      promptTwo = "hiccup";
-      break;
-    case 8:
-      promptTwo = "fairy";
-      break;
-    case 9:
-      promptTwo = "sword";
-      break;
-    default:
-      alert("Error");
-      break;
-  } // End of second Switch
-  switch(promptThree) {
-    case 0:
-      promptThree = "hurricane";
-      break;
-    case 1:
-      promptThree = "curse";
-      break;
-    case 2:
-      promptThree = "reckoning";
-      break;
-    case 3:
-      promptThree = "ghost";
-      break;
-    case 4:
-      promptThree = "breakup";
-      break;
-    case 5:
-      promptThree = "knife";
-      break;
-    case 6:
-      promptThree = "sheets";
-      break;
-    case 7:
-      promptThree = "grandfather clock";
-      break;
-    case 8:
-      promptThree = "howl";
-      break;
-    case 9:
-      promptThree = "tattoo";
-      break;
-    default:
-      alert("Error");
-      break;
-  } // End of third Switch
+/* Arrays have been used to more concisely organize the text values. */
+  const list1 = ["apple", "ring", "bear", "giant", "wish", "seed", "miracle", "teacup", "mirror", "old house", "shoe"];
+  const list2 = ["cat", "glove", "child", "forest", "violin", "siren", "laugh", "hiccup", "fairy", "sword"];
+  const list3 = ["hurricane", "curse", "reckoning", "ghost", "breakup", "knife", "sheets", "grandfather clock", "howl", "tattoo"];
+/* The indices of the arrays for each prompt are randomly generated with the function, allowing
+for any length of array to be used should I wish to add or remove any text values from a list. */
+  let promptOne = list1[randomNumber(list1.length)];
+  let promptTwo = list2[randomNumber(list2.length)];
+  let promptThree = list3[randomNumber(list3.length)];
 
 /* The new values of all of the pieces are placed inside of an interpolated string
 which will be added to the page in the next step */
   let writingPrompt = `The ${promptOne}, the ${promptTwo}, and the ${promptThree}.`;
 /* The text content of the writing prompt gets replaced with new values each time the
-button is clicked. Styling is also added to the prompt. */
+button is clicked. */
   outputP.textContent = writingPrompt;
-  outputP.className = "important";
 }); // End of event
 
-//Displays the text input on the page
+//Displays the text input on the page -- work in progress
 function displayText() {
   let title = document.getElementById("title").value;
   let textBody = document.getElementById("textBody").value;
